@@ -12,7 +12,7 @@ reddit = praw.Reddit('TyrelCraigPracticeBot')
 
 # Choose which subreddit to run your bot in.
 
-subreddit = reddit.subreddit("learnpython")
+subreddit = reddit.subreddit("pythonforengineers")
 
 # Choose which submission category to  run your bot in.
 

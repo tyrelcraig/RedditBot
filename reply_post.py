@@ -32,13 +32,17 @@ subreddit = reddit.subreddit("pythonforengineers")
 
 #category = "hot"
 
+# Check through the top ? posts in the hot category:
+# If the post hasn't been replied to and contains the search phrase,
+# reply with reply phrase and add the post id to the reply list.
 for submission in subreddit.hot(limit=15):
 	if submission.id not in posts_replied_to:
 		if re.search("i love python", submission.title, re.IGNORECASE):
-			submission.reply("Tyrel Craig Practice Bot says: Test 1 Complete")
+			submission.reply("Tyrel Craig Practice Bot says: Test 2 Complete")
 			print("Bot replying to : ", submission.title)
 			posts_replied_to.append(submission.id)
 
+# Write the updated reply list back to the file.
 with open("Posts_Replied_To.txt", "w") as f:
 	for post_id in posts_replied_to:
 		f.write(post_id + "\n")
